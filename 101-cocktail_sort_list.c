@@ -1,13 +1,11 @@
 #include "sort.h"
 
-
 /**
   * cocktail_sort_list - Sorts a doubly linked list
   * of integers in ascending order using the
   * Cocktail Shaker sort algorithm.
   * @list: The doubly linked list to apply the cocktail sort
-  *
-  * Return: Nothing!
+  * Return: Nothing
   */
 
 void cocktail_sort_list(listint_t **list)
@@ -17,6 +15,7 @@ void cocktail_sort_list(listint_t **list)
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
+
 	curr = *list;
 	left_limit = curr;
 	right_limit = get_dlistint_lelem(*list);
@@ -53,8 +52,7 @@ void cocktail_sort_list(listint_t **list)
   * swap_nodes - Swap two nodes of a doubly linked list
   * @list: The double linked lists that contains the nodes
   * @node: The node to swap with the next node
-  *
-  * Return: Nothing!
+  * Return: Nothing
   */
 
 void swap_nodes(listint_t **list, listint_t *node)
@@ -69,7 +67,6 @@ void swap_nodes(listint_t **list, listint_t *node)
 	node->prev = node->next;
 	node->next = node->next->next;
 	node->prev->next = node;
-
 	if (node->next)
 		node->next->prev = node;
 }
@@ -77,7 +74,6 @@ void swap_nodes(listint_t **list, listint_t *node)
 /**
   * get_dlistint_lelem - Counts the number of elements in a doubly linked list
   * @h: The double linked list to count
-  *
   * Return: Number of elements in the doubly linked list
   */
 
@@ -87,6 +83,5 @@ listint_t *get_dlistint_lelem(listint_t *h)
 
 	while (curr->next != NULL)
 		curr = curr->next;
-
 	return (curr);
 }
